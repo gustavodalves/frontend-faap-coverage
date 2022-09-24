@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
 import { Context as ThemeContext } from '../../contexts/ThemeContext';
 
-import Carousel from './components/Carousel';
+import { useNavigate } from "react-router-dom";
+
 
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
@@ -12,6 +13,7 @@ import Col from 'react-bootstrap/Col'
 import carImage from '../../assets/car.png'
 import homeImage from '../../assets/home.png'
 import lifeImage from '../../assets/life.png'
+import { Button } from './styles';
 
 const cardsData = [
     {
@@ -33,6 +35,7 @@ const cardsData = [
 
 const Home: React.FC = () => {
     const { theme, changeTheme } = useContext(ThemeContext);
+    const navigate = useNavigate();
     return (
         <>
         <Container fluid={true} className='container-fluid' style={{paddingTop: '80px', paddingBottom: '50px',backgroundColor: 'rgba(18,54,128, .65)'}}>
@@ -55,6 +58,7 @@ const Home: React.FC = () => {
                 ))
                 }
             </Row>
+            <Button style={{ }} onClick={() => navigate('/produtos')}> Conhecer </Button>
         </Container>
 
         <Container fluid={true} className='container-fluid' style={{paddingTop: '80px', paddingBottom: '50px',backgroundColor: 'rgba(18,54,128, .65)'}}>
