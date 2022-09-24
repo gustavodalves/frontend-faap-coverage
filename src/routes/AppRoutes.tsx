@@ -1,9 +1,12 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import Footer from '../components/Footer'
+import Nav from '../components/Nav'
 import routes from './router'
 
 const AppRoutes = () => {
     return (
         <BrowserRouter>
+        <Nav />
             <Routes>
                 {
                     routes.map(route => {
@@ -19,6 +22,7 @@ const AppRoutes = () => {
                     })
                 }
             </Routes>
+            <Footer />
         </BrowserRouter>
     )
 }

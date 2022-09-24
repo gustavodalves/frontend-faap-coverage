@@ -9,23 +9,24 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-import carImage from '../../assets/car.webp'
-import homeImage from '../../assets/home.jpg'
+import carImage from '../../assets/car.png'
+import homeImage from '../../assets/home.png'
+import lifeImage from '../../assets/life.png'
 
 const cardsData = [
     {
-        title: 'Seguros de Carro',
+        title: 'Seguro Auto',
         image: carImage,
         description: 'orem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim venenatis orci. Fusce convallis nulla nec mattis dapibus. Nullam id magna ipsum. Maecenas nec nibh lacinia'
     },
     {
-        title: 'Seguros de Casa',
+        title: 'Seguro de Casa',
         image: homeImage,
         description: 'orem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim venenatis orci. Fusce convallis nulla nec mattis dapibus. Nullam id magna ipsum. Maecenas nec nibh lacinia'
     },
     {
-        title: 'Seguro de Carros',
-        image: carImage,
+        title: 'Seguro de Vida',
+        image: lifeImage,
         description: 'orem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim venenatis orci. Fusce convallis nulla nec mattis dapibus. Nullam id magna ipsum. Maecenas nec nibh lacinia'
     }
 ]
@@ -33,11 +34,12 @@ const cardsData = [
 const Home: React.FC = () => {
     const { theme, changeTheme } = useContext(ThemeContext);
     return (
-        <Container style={{paddingTop: '80px', paddingBottom: '50px'}}>
-            <Carousel images={[
-                carImage
-            ]} />
+        <>
+        <Container fluid={true} className='container-fluid' style={{paddingTop: '80px', paddingBottom: '50px',backgroundColor: 'rgba(18,54,128, .65)'}}>
+            s
+        </Container>
 
+        <Container fluid={false} className='container-fluid' style={{paddingTop: '80px', paddingBottom: '50px'}}>
             <Row>
                 {cardsData.map(item => (
 
@@ -53,37 +55,13 @@ const Home: React.FC = () => {
                 ))
                 }
             </Row>
-
-            <Carousel images={[
-                homeImage
-            ]} />
-
-            <Row>
-                {
-                    cardsData.map((item, index) => {
-                        var total = index / 2;
-                        console.log(index)
-                         return total % 2 == 0 ? (
-                             <> 
-                             <Col md={6}> <Card>
-                                 <img src={item.image} />
-                            </Card> </Col>
-                             <Col className="text-center" md={6}> <h4>{item.title}</h4> <p>{item.description}</p> </Col>
-                             </>
-                         ) : (
-                             <>
-                            <Col className="text-center" md={6}> <h4>{item.title}</h4> <p>{item.description}</p> </Col>
-                            <Col md={6}> <Card>
-                            <img src={item.image} />
-                       </Card> </Col>
-                       </>
-                         )
-                    })
-                }
-
-            </Row>
-            {/* <button onClick={() => changeTheme()}> { JSON.stringify(theme) } </button> */}
         </Container>
+
+        <Container fluid={true} className='container-fluid' style={{paddingTop: '80px', paddingBottom: '50px',backgroundColor: 'rgba(18,54,128, .65)'}}>
+            
+        </Container>
+            {/* <button onClick={() => changeTheme()}> { JSON.stringify(theme) } </button> */}
+        </>
     )
 }
 

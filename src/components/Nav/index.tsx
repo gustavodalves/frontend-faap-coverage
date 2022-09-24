@@ -12,19 +12,11 @@ const itemsMenu = [
     },
     {
         title: 'Sobre',
-        to: '',
-    },
-    {
-        title: 'Saúde',
-        to: '',
-    },
-    {
-        title: 'Consórcio',
-        to: '',
+        to: '/sobre-nos',
     },
     {
         title: 'Produtos',
-        to: '',
+        to: '/produtos',
     }
 ]
 
@@ -34,10 +26,10 @@ const Nav = () => (
                 <NavItem> 
                 <img src={logo} />
                 </NavItem>
-            {
+                {
                     itemsMenu.map(item => (
                         <NavItem key={item.title}>
-                            { item.title }
+                            <Link to={item.to}>{ item.title }</Link>
                         </ NavItem>
                     ))
                 }
