@@ -61,8 +61,10 @@ const Home: React.FC = () => {
             <Button style={{ }} onClick={() => navigate('/produtos')}> Conhecer </Button>
         </Container>
 
-        <Container fluid={true} className='container-fluid' style={{paddingTop: '80px', paddingBottom: '50px',backgroundColor: 'rgba(18,54,128, .65)'}}>
-            
+        <Container fluid={true} className='container-fluid' style={{paddingTop: '50px', paddingBottom: '80px',backgroundColor: 'rgba(18,54,128, .65)', color: '#f8f8f8'}}>
+            <h3 className='text-center'> Contato </h3>
+            <p className='text-center'> <bold> Email: </bold> g@alves.com.br </p>
+            <p className='text-center'> <bold> Telefone: </bold> +55 (11) 99187-8305 </p>
         </Container>
             {/* <button onClick={() => changeTheme()}> { JSON.stringify(theme) } </button> */}
         </>
