@@ -1,5 +1,6 @@
 import React from 'react'
 import AboutUs from '../pages/AboutUs';
+import ContactUs from '../pages/ContactUs';
 import Error404 from '../pages/Error404';
 
 import Home from '../pages/Home'
@@ -21,12 +22,16 @@ const routes: RouteType[] = [
         component: AboutUs,
     },
     {
-        path:'/error-404',
+        path: '/error-404',
         component: Error404
     },
     {
         path: '/produtos',
         component: Products,
+    },
+    {
+        path: 'fale-conosco',
+        component: ContactUs
     },
     {
         path: '*',
