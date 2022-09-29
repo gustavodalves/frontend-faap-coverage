@@ -13,8 +13,8 @@ import Loading from '../../components/Loading';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from 'react-hot-toast';
+
 
 interface IFormInputs {
     email: string
@@ -39,20 +39,44 @@ const ContactUs = () => {
     })
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const notify = () => toast("Wow so easy!");
+    const [response, setResponse] = useState<string>('Enviado com sucesso');
+    const notify = () => toast(response, {
+        duration: 2000,
+        position: 'top-right',
+
+        // Styling
+        style: {},
+        className: '',
+
+        // Custom Icon
+        icon: response === 'Enviado com sucesso' ? '✅' : '❌',
+
+        // Change colors of success/error/loading icon
+        iconTheme: {
+            primary: '#000',
+            secondary: '#fff',
+        },
+
+        // Aria
+        ariaProps: {
+            role: 'status',
+            'aria-live': 'polite',
+        },
+    });
 
     const onSubmit = async (data: any) => {
         setIsLoading(true)
         try {
             const { status } = await customerRegister(data);
 
+            setResponse('Enviado com sucesso')
             if (status === 201) {
-                notify()
             }
 
         } catch ({ response }) {
-            console.log(response);
+            setResponse('Falha ao enviar')
         }
+        notify()
         setIsLoading(false);
     }
 
@@ -77,9 +101,9 @@ const ContactUs = () => {
                                 placeholder="Email"
                                 {...register('email', { required: true })}
                             />
+                            {errors.email && <p role="alert">{errors.email?.message}</p>}
                         </InputGroup>
 
-                        {errors.email?.message}
 
                         <InputGroup className="mb-3">
                             <Form.Control
@@ -100,7 +124,7 @@ const ContactUs = () => {
 
                         <input type="submit" style={{ padding: '10px', borderRadius: '5px', border: 'none', backgroundColor: '#123680', color: '#f8f8f8' }} value="enviar" />
                     </Form>
-                    <ToastContainer />
+                    <Toaster />
                 </Container>
             }
         </>

@@ -5,6 +5,8 @@ import Error404 from '../pages/Error404';
 
 import Home from '../pages/Home'
 import Products from '../pages/Products';
+import Bot from '../pages/Bot';
+import Customer from '../pages/Admin/Customers';
 
 interface RouteType {
     path: string,
@@ -32,6 +34,14 @@ const routes: RouteType[] = [
     {
         path: 'fale-conosco',
         component: ContactUs
+    },
+    {
+        path: 'bot',
+        component: Bot,
+    },
+    {
+        path: 'admin/clientes',
+        component: Customer,
     },
     {
         path: '*',

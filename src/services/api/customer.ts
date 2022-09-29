@@ -19,4 +19,6 @@ export const register = ({
     message,
 })
 
+export const getAllCustomer = () => api.get('customer')
+
 export const index = () => api.get('customer');

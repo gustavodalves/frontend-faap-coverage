@@ -21,6 +21,10 @@ const itemsMenu = [
     to: '/produtos',
   },
   {
+    title: 'Bot',
+    to: '/bot'
+  },
+  {
     title: 'Fale Conosco',
     to: '/fale-conosco'
   }
