@@ -20,16 +20,16 @@ const ChatBot: React.FC = () => {
     }, [botReq])
 
     async function handleInputMessage() {
-        setInputValue(null);
         const { data, status } = await bot(botReq)
 
         if (botIsValid) {
+            setInputValue('')
             if (status === 200) {
                 setBotData([...botData, {
                     ...data.message,
                     position: 'right',
                 }])
-                if (data.message.message === 'Tchau :)') {
+                if (data.message.message === 'Tchau :)' || data.message.options[0].message === 'Tchau :)') {
                     setBotIsValid(false)
                 }
             }
@@ -55,12 +55,9 @@ const ChatBot: React.FC = () => {
         })
 
         if (item.options?.length > 0) {
-            item.options.forEach(itemOptions => {
-                if (itemOptions.message === 'Tchau :)') {
-                    setBotIsValid(false)
-                }
+            item.options.forEach(itemOption => {
                 dataSource.push({
-                    text: itemOptions.message,
+                    text: itemOption.message,
                     position: 'right',
                     type: 'text'
                 })
@@ -80,7 +77,6 @@ const ChatBot: React.FC = () => {
             />
             <div style={{ bottom: '80px', position: 'fixed', width: '90vw', left: '50%', transform: 'translateX(-50%)' }}>
                 <Input
-                    placeholder='Type here...'
                     value={inputValue}
                     onChange={e => setInputValue(+e.target.value || e.target.value)}
                     rightButtons={<Button onClick={handleClickButton} color='white' backgroundColor='#123680' text='Enviar' />}

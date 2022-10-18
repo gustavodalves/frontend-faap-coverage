@@ -20,7 +20,7 @@ const products = [
     {
         title: 'Seguro de carro',
         image: carImage,
-        description: 
+        description:
             'sse site possui algumas das mais belas imagens disponíveis na web. Todas as imagens são completamente livres de qualquer tipo de direito autoral.'
     },
     {
@@ -93,14 +93,14 @@ const products = [
 
 const Products = () => {
     console.log(products)
-    return(
+    return (
         <>
-            <Container className='container-fluid' style={{paddingTop: '80px', paddingBottom: '50px'}}>
+            <Container className='container-fluid' style={{ paddingTop: '80px', paddingBottom: '60px' }}>
                 <h1 className='text-center'> Produtos </h1>
                 {
                     products.map(product => (
                         <ProductsContainer>
-                            <Title> { product.title }</Title>
+                            <Title> {product.title}</Title>
                             <img className='img-fluid' src={product.image} />
                             <Description> {product.description}</Description>
                         </ProductsContainer>
@@ -108,7 +108,7 @@ const Products = () => {
                 }
             </Container>
         </>
-            
+
     )
 }
 

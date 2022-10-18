@@ -122,7 +122,7 @@ const ContactUs = () => {
                             />
                         </InputGroup>
 
-                        <input type="submit" style={{ padding: '10px', borderRadius: '5px', border: 'none', backgroundColor: '#123680', color: '#f8f8f8' }} value="enviar" />
+                        <input type="submit" style={{ padding: '10px', borderRadius: '5px', border: 'none', backgroundColor: '#123680', color: '#f8f8f8' }} value="Enviar" />
                     </Form>
                     <Toaster />
                 </Container>

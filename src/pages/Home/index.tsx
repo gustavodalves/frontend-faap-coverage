@@ -47,7 +47,7 @@ const Home: React.FC = () => {
                     </Col>
 
                     <Col style={{ padding: '30px' }} className="align-center" md="6" sm="12">
-                        <p style={{ color: 'white' }}> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. </p>
+                        <p style={{ color: 'white' }}> A FAAP Coverage Corretora é uma das maiores corretoras de seguro do país, com alta capacidade e entrega de trabalho para o cliente. Conseguimos isso por meio de um processo diferenciado e qualificado, pois queremos muito mais do que apenas vender seguros, nos preocupamos com o atendimento de qualidade e com um serviço bem feito. Somos uma corretora de seguros comprometida com a qualidade, agilidade e rapidez. Este site tem por ideia ligar o cliente ao serviço, no qual a corretora tem a possibilidade de se comunicar com futuros clientes interessados em nosso serviço. </p>
                     </Col>
                 </Row>
             </Container>
@@ -73,8 +73,8 @@ const Home: React.FC = () => {
 
             <Container fluid={true} className='container-fluid' style={{ paddingTop: '50px', paddingBottom: '80px', backgroundColor: 'rgba(18,54,128, .65)', color: '#f8f8f8' }}>
                 <h3 className='text-center'> Contato </h3>
-                <p className='text-center'> <bold> Email: </bold> g@alves.com.br </p>
-                <p className='text-center'> <bold> Telefone: </bold> +55 (11) 99187-8305 </p>
+                <p className='text-center'> <bold> Email: </bold> faapseg@faapseg.com.br </p>
+                <p className='text-center'> <bold> Telefone: </bold> + 55 </p>
             </Container>
             {/* <button onClick={() => changeTheme()}> { JSON.stringify(theme) } </button> */}
         </>
