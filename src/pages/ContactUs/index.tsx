@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup';
@@ -29,7 +29,9 @@ const schema = yup.object({
 }).required();
 
 const ContactUs = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>();
+    const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>({
+        mode: "onChange" // "onChange"
+      });
 
     const [formData, setFormData] = useState({
         email: '',
@@ -80,6 +82,10 @@ const ContactUs = () => {
         setIsLoading(false);
     }
 
+    console.log(errors, 90)
+    useEffect(() => {
+    }, [errors])
+
     return (
         <>
             {isLoading ? <Loading /> :
@@ -87,42 +93,51 @@ const ContactUs = () => {
 
                     <Form onSubmit={handleSubmit(onSubmit)}>
                         <h3 className='text-center mb-2'> Fale Conosco </h3>
-                        <InputGroup className="mb-3">
+                        <InputGroup className="mb-1">
                             <Form.Control
                                 placeholder="Nome"
+                                className={errors.name && 'is-invalid'}
                                 aria-label="Nome"
                                 {...register('name', { required: true })}
                             />
                         </InputGroup>
-                        <p>{errors.name?.message}</p>
+                        {errors.name && <small style={{marginTop: '-20px'}} className="text-danger">O campo nome é obrigatório </small>}
 
-                        <InputGroup className="mb-3">
+                        <InputGroup className="mb-1">
                             <Form.Control
                                 placeholder="Email"
-                                {...register('email', { required: true })}
+                                className={errors.email && 'is-invalid'}
+                                {...register('email', { required: true, pattern: {
+                                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                    message: "Endereço de email inválido"
+                                  } })}
                             />
-                            {errors.email && <p role="alert">{errors.email?.message}</p>}
                         </InputGroup>
+                            {errors.email && <small style={{marginTop: '-20px'}} className="text-danger">{errors.email.message || 'O campo email é obrigatório'}</small>}
 
 
-                        <InputGroup className="mb-3">
+                        <InputGroup className="mb-1">
                             <Form.Control
                                 placeholder="Assunto"
                                 aria-label="Assunto"
-                                {...register('subject')}
+                                className={errors.subject && 'is-invalid'}
+                                {...register('subject', { required: true })}
                             />
                         </InputGroup>
+                        {errors.subject && <small style={{marginTop: '-20px'}} className="text-danger">O campo assunto é obrigatório </small>}
 
-                        <InputGroup className="mb-3">
+                        <InputGroup className="mb-1">
                             <Form.Control
                                 placeholder="Mensagem"
                                 aria-label="Mensagem"
+                                className={errors.message && 'is-invalid'}
                                 as="textarea" rows={4}
-                                {...register('message')}
+                                {...register('message', { required: true, minLength: 15 })}
                             />
                         </InputGroup>
+                        {errors.message && <small style={{marginTop: '-20px'}} className="text-danger">O campo mensagem deve ter mais de 15 caracteres</small>}
 
-                        <input type="submit" style={{ padding: '10px', borderRadius: '5px', border: 'none', backgroundColor: '#123680', color: '#f8f8f8' }} value="Enviar" />
+                        <input type="submit" style={{ padding: '10px', borderRadius: '5px', border: 'none', backgroundColor: '#123680', color: '#f8f8f8', display: 'block' }} value="Enviar" />
                     </Form>
                     <Toaster />
                 </Container>
