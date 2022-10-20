@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import './style.css'
 
 import logo from '../../assets/logo.png'
+import { products } from '../../pages/Products';
 const itemsMenu = [
   {
     title: 'Inicio',
@@ -19,6 +20,7 @@ const itemsMenu = [
   {
     title: 'Produtos',
     to: '/produtos',
+    children: products
   },
   {
     title: 'Bot',
@@ -38,9 +40,20 @@ const NavComponent = () => (
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
           {
-            itemsMenu.map(r => (
-              <Nav.Link> <Link className='link' to={r.to}>{r.title}</Link>  </Nav.Link>
-            ))
+            itemsMenu.map(r => {
+              return r.children ? (
+                <NavDropdown className='link' title={itemsMenu[2].title} id="basic-nav-dropdown">
+                    {
+                      r.children.map(children => {
+                        return (
+                          <NavDropdown.Item href={`/produtos/#${children.id}`}>
+                            {children.title}
+                          </NavDropdown.Item>)
+                      })
+                    }
+                </NavDropdown>
+              ) : <Nav.Link> <Link className='link' to={r.to}>{r.title}</Link>  </Nav.Link>
+            })
           }
         </Nav>
       </Navbar.Collapse>
