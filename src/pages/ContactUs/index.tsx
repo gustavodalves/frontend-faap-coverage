@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
+
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form'
 import InputGroup from 'react-bootstrap/InputGroup';
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 import { useForm } from 'react-hook-form';
 
@@ -14,6 +17,15 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
 import toast, { Toaster } from 'react-hot-toast';
+
+import { products } from '../Products'
+
+const subjectOptions = [
+    'Orçamento',
+    'Atendimento',
+    'Dúvida',
+    'Outros',
+]
 
 
 interface IFormInputs {
@@ -125,6 +137,36 @@ const ContactUs = () => {
                             />
                         </InputGroup>
                         {errors.subject && <small style={{marginTop: '-20px'}} className="text-danger">O campo assunto é obrigatório </small>}
+
+                    <Row>
+                        <Col md={6} sm={12}>
+                            <InputGroup className="mb-1">
+                                <Form.Select>
+                                    {
+                                        products.map(product => (
+                                            <option value={product.title}>
+                                                {product.title}
+                                            </option>
+                                        ))
+                                    }
+                                </Form.Select>
+                            </InputGroup>
+                        </Col>
+
+                        <Col md={6} sm={12}>
+                            <InputGroup className="mb-1">
+                                <Form.Select>
+                                    {
+                                        subjectOptions.map(subject => (
+                                            <option value={subject}>
+                                                {subject}
+                                            </option>
+                                        ))
+                                    }
+                                </Form.Select>
+                            </InputGroup>
+                        </Col>
+                    </Row>
 
                         <InputGroup className="mb-1">
                             <Form.Control
