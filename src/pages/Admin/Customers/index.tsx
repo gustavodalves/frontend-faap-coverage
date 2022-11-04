@@ -71,6 +71,7 @@ const Customer = () => {
                             <tr>
                                 <th>Nome</th>
                                 <th>Email</th>
+                                <th>Produto</th>
                                 <th>Assunto</th>
                                 <th>Mensagem</th>
                                 <th>Criado Em</th>
@@ -88,6 +89,7 @@ const Customer = () => {
                                         }} key={index}>
                                             <td>{item.name}</td>
                                             <td>{item.email}</td>
+                                            <td>{item.product}</td>
                                             <td>{item.subject}</td>
                                             <td>{item.message.substring(0, 20)}{item.message.length > 19 && '...'}</td>
                                             <td>{`${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`}</td>

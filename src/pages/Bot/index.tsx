@@ -7,6 +7,8 @@ import Container from 'react-bootstrap/Container';
 
 import bot from '../../services/api/bot'
 
+import './style.css'
+
 
 const ChatBot: React.FC = () => {
     const messageListReferance = React.createRef();
@@ -64,17 +66,23 @@ const ChatBot: React.FC = () => {
             })
         }
     })
+    
+    const styles = {
+        height: {
+
+        }
+    }
 
 
     return (
-        <Container style={{ paddingTop: '80px', paddingBottom: '50px' }} >
-            <MessageList
-                referance={messageListReferance}
-                className='message-list'
-                lockable={true}
-                toBottomHeight={'100%'}
-                dataSource={dataSource}
-            />
+        <Container style={{ paddingTop: '80px', paddingBottom: '90px' }} >
+
+                <MessageList
+                    referance={messageListReferance}
+                    className='message-list list-message-container'
+                    toBottomHeight={10}
+                    dataSource={dataSource}
+                />
             <div style={{ bottom: '80px', position: 'fixed', width: '90vw', left: '50%', transform: 'translateX(-50%)' }}>
                 <Input
                     value={inputValue}

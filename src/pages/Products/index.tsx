@@ -25,14 +25,14 @@ export const products = [
         image: carImage,
         id: 'seguro-carro',
         description:
-            'sse site possui algumas das mais belas imagens disponíveis na web. Todas as imagens são completamente livres de qualquer tipo de direito autoral.'
+            'Tranquilidade no seu dia e nas viagens. A certeza de que o inesperado não irá te perturbar. Com várias opções de coberturas como colisão, incêndio, roubo, furto, terceiros, além de assistência 24h. Nós da FAAP, faremos sua cotação procurando atender suas necessidades e o melhor custo benefício.'
     },
     {
         title: 'Seguro de Casa',
         image: homeImage,
         id: 'seguro-casa',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh viverra, ultricies justo a, egestas dolor. Phasellus a augue.'
+            'A garantia de que a sua família e o seu patrimônio estarão em segurança é o nosso objetivo. Opções de seguros para sua residência com coberturas para danos elétricos, incêndio, explosão, fumaça, roubo, responsabilidade civil e outros, conforme a sua necessidade.'
     },
     {
         title: 'Seguro de Vida',
@@ -46,42 +46,42 @@ export const products = [
         image: officeImage,
         id: 'seguro-empresa',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh viverra, ultricies justo a, egestas dolor. Phasellus a augue.'
+            'Proteção e Segurança para sua empresa como escritórios, lojas, comércios em geral e indústrias e seus clientes.'
     },
     {
         title: 'Seguro Saúde',
         image: healthImage,
         id: 'seguro-saude',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh viverra, ultricies justo a, egestas dolor. Phasellus a augue.'
+            'Segurança, tranquilidade e proteção para você, sua família e seus funcionários. Planos individuais, por adesão ou para a sua empresa à partir de duas vidas. Administramos procurando trazer apoio e o seu melhor custo-benefício.'
     },
     {
         title: 'Seguro Transporte',
         image: transportationImage,
         id: 'seguro-transporte',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh viverra, ultricies justo a, egestas dolor. Phasellus a augue.'
+            'A garantia que seus produtos, durante transporte, estarão seguros são os nossos objetivos nesse caso. Transporte de carga, sem risco de perder algum valor, como extravio, são tais possibilidades a se evitar ao escolher essa opção.'
     },
     {
         title: 'Seguro Viagem',
         image: tripImage,
         id: 'seguro-viagem',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh viverra, ultricies justo a, egestas dolor. Phasellus a augue.'
+            'Viagem de férias, a trabalho, malas prontas, destino dos sonhos! Porque longe de casa temos que estar mais seguros do que nunca. Garanta os imprevistos e fique tranquilo, estaremos aqui para dar todo o suporte.'
     },
     {
         title: 'Seguro Celular',
         image: mobileImage,
         id: 'seguro-celular',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh viverra, ultricies justo a, egestas dolor. Phasellus a augue.'
+            'Atualmente os smartphones, notebooks, câmeras, instrumentos musicais e outros equipamentos eletrônicos são indispensáveis no nosso dia a dia, mas o risco existe e podemos minimizar. Consulte-nos, você escolhe as coberturas conforme sua necessidade.'
     },
     {
         title: 'Seguro Saúde Pet',
         image: petImage,
         id: 'seguro-saude-pet',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh viverra, ultricies justo a, egestas dolor. Phasellus a augue.'
+            'Saúde, vacinas e qualidade de vida para o seu pet que merece tanto carinho, cuidado e protegendo o dono dos imprevistos. Sim, temos o melhor para oferecer, consulte-nos.'
     },
     {
         title: 'Seguro Responsabilidade Civil',
@@ -95,7 +95,7 @@ export const products = [
         image: bailImage,
         id: 'seguro-fianca',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh viverra, ultricies justo a, egestas dolor. Phasellus a augue.'
+            'Com a FAPP Seguros, o seguro fiança para alugar um imóvel ficou muito mais fácil. Você não precisa se preocupar com fiador e caução; aluga o imóvel que quiser, para sua moradia ou seu negócio, com agilidade. Fazemos toda a consultoria com garantia.'
     },
     {
         title: 'Consórcio',
