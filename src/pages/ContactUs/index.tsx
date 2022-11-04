@@ -27,12 +27,12 @@ const subjectOptions = [
     'Outros',
 ]
 
-
 interface IFormInputs {
     email: string
     name: string
     subject: string
     message: string
+    product: string,
 }
 
 const schema = yup.object({
@@ -50,6 +50,7 @@ const ContactUs = () => {
         name: '',
         subject: '',
         message: '',
+        product: '',
     })
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -127,21 +128,10 @@ const ContactUs = () => {
                         </InputGroup>
                             {errors.email && <small style={{marginTop: '-20px'}} className="text-danger">{errors.email.message || 'O campo email é obrigatório'}</small>}
 
-
-                        <InputGroup className="mb-1">
-                            <Form.Control
-                                placeholder="Assunto"
-                                aria-label="Assunto"
-                                className={errors.subject && 'is-invalid'}
-                                {...register('subject', { required: true })}
-                            />
-                        </InputGroup>
-                        {errors.subject && <small style={{marginTop: '-20px'}} className="text-danger">O campo assunto é obrigatório </small>}
-
                     <Row>
                         <Col md={6} sm={12}>
                             <InputGroup className="mb-1">
-                                <Form.Select>
+                                <Form.Select  {...register('product', { required: true })}>
                                     {
                                         products.map(product => (
                                             <option value={product.title}>
@@ -155,7 +145,7 @@ const ContactUs = () => {
 
                         <Col md={6} sm={12}>
                             <InputGroup className="mb-1">
-                                <Form.Select>
+                                <Form.Select  {...register('subject', { required: true })}>
                                     {
                                         subjectOptions.map(subject => (
                                             <option value={subject}>

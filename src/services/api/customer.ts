@@ -12,11 +12,13 @@ export const register = ({
     name,
     subject,
     message,
+    product
 }: ICustomerParams) => api.post('customer/store', {
     email,
     name,
     subject,
     message,
+    product,
 })
 
 export const getAllCustomer = () => api.get('customer')
