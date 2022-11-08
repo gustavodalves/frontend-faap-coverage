@@ -2,10 +2,8 @@ import axios from 'axios';
 
 const token = localStorage.getItem('token')
 
-console.log(token)
-
 export default axios.create({
-    baseURL: 'http://localhost:3000/',
+    baseURL: import.meta.env.VITE_BASE_URL,
     headers: {
         Authorization: `Bearer ${token}`
     },
