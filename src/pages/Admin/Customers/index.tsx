@@ -59,7 +59,7 @@ const Customer = () => {
             console.log(data.data)
         }).catch(() => {
             handleShow()
-        }).finally(setIsLoading(false))
+        }).finally(() => setIsLoading(false))
     }, [])
 
     return (
