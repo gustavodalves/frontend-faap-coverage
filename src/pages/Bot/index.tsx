@@ -57,7 +57,7 @@ const ChatBot: React.FC = () => {
         })
 
         if (item.options?.length > 0) {
-            item.options.forEach(itemOption => {
+            item.options.forEach((itemOption: any) => {
                 dataSource.push({
                     text: itemOption.message,
                     position: 'right',
