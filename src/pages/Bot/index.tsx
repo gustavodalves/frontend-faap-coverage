@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { ChangeEvent, useEffect, useState } from 'react'
 
 import { MessageList, Input, Button } from 'react-chat-elements'
 import 'react-chat-elements/dist/main.css'
@@ -12,6 +12,8 @@ import './style.css'
 
 const ChatBot: React.FC = () => {
     const messageListReferance = React.createRef();
+    const inputReferance = React.createRef<any>()
+
     const [botData, setBotData] = useState<any[]>([])
     const [botReq, setBotReq] = useState<any[]>([])
     const [inputValue, setInputValue] = useState<any>('')
@@ -82,11 +84,19 @@ const ChatBot: React.FC = () => {
                     className='message-list list-message-container'
                     toBottomHeight={10}
                     dataSource={dataSource}
+                    lockable={true}
+                    downButton={false}
+                    downButtonBadge={0}
+                    sendMessagePreview={false}
+
                 />
             <div style={{ bottom: '80px', position: 'fixed', width: '90vw', left: '50%', transform: 'translateX(-50%)' }}>
                 <Input
-                    value={inputValue}
-                    onChange={e => setInputValue(+e.target.value || e.target.value)}
+                    ref={inputReferance}
+                    clear={() => (setInputValue(''))}
+                    placeholder='Type here...'
+                    maxHeight={100}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => { setInputValue(+e.target.value || e.target.value)}}
                     rightButtons={<Button onClick={handleClickButton} color='white' backgroundColor='#123680' text='Enviar' />}
                 />
             </div>

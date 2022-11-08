@@ -4,7 +4,8 @@ interface ICustomerParams {
     email: string;
     name: string;
     subject: string;
-    message: string
+    message: string;
+    product: string;
 }
 
 export const register = ({
