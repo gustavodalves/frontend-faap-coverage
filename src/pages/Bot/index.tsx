@@ -27,7 +27,6 @@ const ChatBot: React.FC = () => {
         const { data, status } = await bot(botReq)
 
         if (botIsValid) {
-            setInputValue('')
             if (status === 200) {
                 setBotData([...botData, {
                     ...data.message,
