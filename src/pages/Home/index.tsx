@@ -61,7 +61,6 @@ const Home: React.FC = () => {
                                 <img src={item.image} />
                                 <div style={{ padding: '10px' }}>
                                     <h2> {item.title} </h2>
-                                    <p> {item.description} </p>
                                 </div>
                             </Card>
                         </Col>
