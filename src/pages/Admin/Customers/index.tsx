@@ -29,8 +29,12 @@ const Customer = () => {
     const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>();
     const [show, setShow] = useState(false);
 
+    const [page, setPage] = useState(1)
+
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    let numberPages = 0
 
     const onSubmit = async (dataReq: any) => {
         console.log(dataReq)
@@ -52,6 +56,16 @@ const Customer = () => {
         })
     }
 
+    if(fetchCustomersData?.length ?? 0 > 0) {
+        numberPages = Math.round(fetchCustomersData?.length ?? 8)
+    }
+    const arrayPagination = new Array(numberPages / 8).fill(0)
+
+    const tablePaginated = fetchCustomersData?.filter((_, index ) => {
+        const test = (page - 1) * 8
+
+        return index > test && index < 8 * page
+    })
 
     useEffect(() => {
         getAllCustomer().then(data => {
@@ -80,7 +94,7 @@ const Customer = () => {
 
                         <tbody>
                             {
-                                fetchCustomersData?.map((item, index) => {
+                                tablePaginated?.map((item, index) => {
                                     const date = new Date(item.created_at)
                                     return (
                                         <tr onClick={() => {
@@ -99,6 +113,19 @@ const Customer = () => {
                             }
                         </tbody>
                     </Table>
+
+                    <Pagination>
+                        {
+                            arrayPagination.map((_, index) => {
+                                const item = index
+                                return (
+                                    <Pagination.Item active={index + 1 === page} onClick={() => setPage(item + 1)} key={index}>
+                                        { index + 1}
+                                    </Pagination.Item>
+                                )
+                            })
+                        }
+                    </Pagination>
 
                     <Modal
                         size="lg"
