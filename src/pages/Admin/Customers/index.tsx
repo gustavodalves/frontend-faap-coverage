@@ -28,7 +28,7 @@ const Customer = () => {
     const [modalContent, setModalContent] = useState<any>({});
     const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>();
     const [show, setShow] = useState(false);
-    let length = 54
+    let length = 62
 
     const [page, setPage] = useState(1)
 
