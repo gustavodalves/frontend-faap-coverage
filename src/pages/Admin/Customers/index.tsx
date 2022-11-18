@@ -23,18 +23,31 @@ interface IFormInputs {
 
 const Customer = () => {
     const [lgShow, setLgShow] = useState(false);
-    const [fetchCustomersData, setFetchCustomersData] = useState<any[]>();
+    const [fetchCustomersData, setFetchCustomersData] = useState<any[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [modalContent, setModalContent] = useState<any>({});
     const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>();
     const [show, setShow] = useState(false);
+    let length = 25
 
     const [page, setPage] = useState(1)
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    useEffect(() => {
+        getAllCustomer().then(data => {
+            setFetchCustomersData(data.data.reverse())
+            length = data.data.length
+
+            console.log(length, 19)
+        }).catch(() => {
+            handleShow()
+        }).finally(() => setIsLoading(false))
+    }, [])
+
     let numberPages = 0
+    let arrayPagination = new Array(1).fill(0)
 
     const onSubmit = async (dataReq: any) => {
         console.log(dataReq)
@@ -56,25 +69,19 @@ const Customer = () => {
         })
     }
 
-    if(fetchCustomersData?.length ?? 0 > 0) {
-        numberPages = Math.round(fetchCustomersData?.length ?? 8)
+    if(length > 0) {
+        numberPages = Math.ceil(length / 8)
+        arrayPagination = new Array(numberPages).fill(0)
+
+        console.log(Math.round(length / 8))
     }
-    const arrayPagination = new Array(numberPages / 8).fill(0)
 
     const tablePaginated = fetchCustomersData?.filter((_, index ) => {
-        const test = (page - 1) * 8
+        const test = (page - 1) * 7
+        console.log(test, 9)
 
-        return index > test && index < 8 * page
+        return index > test && index < 7 * page
     })
-
-    useEffect(() => {
-        getAllCustomer().then(data => {
-            setFetchCustomersData(data.data.reverse())
-            console.log(data.data)
-        }).catch(() => {
-            handleShow()
-        }).finally(() => setIsLoading(false))
-    }, [])
 
     return (
         <>
