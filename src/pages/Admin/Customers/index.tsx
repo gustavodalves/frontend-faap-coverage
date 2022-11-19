@@ -28,7 +28,7 @@ const Customer = () => {
     const [modalContent, setModalContent] = useState<any>({});
     const { register, handleSubmit, formState: { errors } } = useForm<IFormInputs>();
     const [show, setShow] = useState(false);
-    let length = 62
+    const length = fetchCustomersData.length + 7
 
     const [page, setPage] = useState(1)
 
@@ -38,9 +38,6 @@ const Customer = () => {
     useEffect(() => {
         getAllCustomer().then(data => {
             setFetchCustomersData(data.data.reverse())
-            length = data.data.length
-
-            console.log(length, 19)
         }).catch(() => {
             handleShow()
         }).finally(() => setIsLoading(false))
@@ -72,14 +69,10 @@ const Customer = () => {
     if(length > 0) {
         numberPages = Math.ceil(length / 8)
         arrayPagination = new Array(numberPages).fill(0)
-
-        console.log(Math.round(length / 8))
     }
 
     const tablePaginated = fetchCustomersData?.filter((_, index ) => {
         const test = (page - 1) * 7
-        console.log(test, 9)
-
         return index > test && index < 7 * page
     })
 
@@ -120,7 +113,7 @@ const Customer = () => {
                             }
                         </tbody>
                     </Table>
-
+                            {length}
                     <Pagination>
                         {
                             arrayPagination.map((_, index) => {
