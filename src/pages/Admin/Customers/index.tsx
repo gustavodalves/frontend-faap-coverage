@@ -113,7 +113,6 @@ const Customer = () => {
                             }
                         </tbody>
                     </Table>
-                            {length}
                     <Pagination>
                         {
                             arrayPagination.map((_, index) => {

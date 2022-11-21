@@ -39,7 +39,7 @@ export const products = [
         image: lifeImage,
         id: 'seguro-vida',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh viverra, ultricies justo a, egestas dolor. Phasellus a augue.'
+            'Proteja quem você ama! Seguro de vida é a garantia do seu futuro e de sua família. Fornecemos seguros com opções de doenças graves e DIT (Diária de Incapacidade de Temporária) para sua maior tranquilidade.'
     },
     {
         title: 'Seguro Empresa',
@@ -88,7 +88,7 @@ export const products = [
         image: responsibilityImage,
         id: 'segura-responsabilidade-civil',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh viverra, ultricies justo a, egestas dolor. Phasellus a augue.'
+            'Danos físicos, materiais ou morais a terceiros, de sua responsabilidade, podem ser reparados com a nossa ajuda. Temos o serviço de responsabilidade civil profissional para médicos, engenheiros, advogados e outros, bem como riscos operacionais para sua empresa ou evento. Consulte-nos!'
     },
     {
         title: 'Seguro Fiança',
@@ -102,7 +102,7 @@ export const products = [
         image: consortiumImage,
         id: 'consorcio',
         description:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tincidunt nibh viverra, ultricies justo a, egestas dolor. Phasellus a augue.'
+            'A sua casa própria ou o automóvel dos seus sonhos, no seu tempo, e cabendo no seu bolso. Você pode usar o seu FGTS, imóveis e opções com parcelas reduzidas até a contemplação. Peça a sua cotação!'
     }
 ]
 

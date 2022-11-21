@@ -6,10 +6,12 @@ const AboutUs = () => {
     return (
         <Container style={{ paddingTop: '80px', paddingBottom: '50px' }}>
             <h2 className='text-center mt-2'>Sobre Nós</h2>
-            <img style={{ borderRadius: '10px' }} className='img-fluid d-block mt-auto mb-5' src={logo} />
-            <p> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. </p>
-            <h2 className='text-center mt-2'>Where does it come from?</h2>
-            <p> Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. </p>
+            <img style={{ borderRadius: '10px', maxWidth: '400px' }} className='img-fluid d-block m-auto mt-5 mb-5' src={logo} />
+            <p className="m-auto"> Formado desde 1998 no ramo de seguros, Fernando se consolidou com a criação da FAAP Coverage em 2011, tendo como objetivo atender seus clientes com confiança, seriedade e técnica.
+
+                Nosso principal foco é o atendimento personalizado, pois acreditamos que cada um dos nossos clientes tem suas necessidades, seus projetos e suas expectativas individuais.
+
+                Em nossa corretora, o cliente não é apenas um número. </p>
         </Container>
     )
 }
